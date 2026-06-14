@@ -1,0 +1,230 @@
+{
+  "name": "feral - End-to-End Scaffold",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-001",
+      "name": "Schedule Trigger (every 12h)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1200,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "fetch-usgs-001",
+      "name": "Fetch Disaster Data (USGS)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -980,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const features = $json.features || [];\nconst usable = features\n  .filter((f) => f.geometry && Array.isArray(f.geometry.coordinates))\n  .sort((a, b) => (b.properties?.mag || 0) - (a.properties?.mag || 0));\n\nif (!usable.length) {\n  throw new Error('No usable USGS event returned.');\n}\n\nconst selected = usable[0];\nconst [longitude, latitude, depthKm] = selected.geometry.coordinates;\nconst props = selected.properties || {};\n\nreturn [\n  {\n    json: {\n      disaster: {\n        source: 'usgs_earthquake_significant_month',\n        id: selected.id,\n        title: props.title || 'USGS earthquake event',\n        url: props.url,\n        occurred_at: props.time ? new Date(props.time).toISOString() : null,\n        latitude,\n        longitude,\n        depth_km: depthKm,\n        magnitude: props.mag,\n        place: props.place,\n        event_type: props.type || 'earthquake'\n      },\n      feral_intent: {\n        project: 'feral',\n        mode: 'Disaster-to-Feral + Habitat Mapper + RAG + Hermes Review',\n        art_direction: 'hyperreal animal-viewpoint disaster ecology, near-future speculative realism'\n      },\n      rag_keywords: `${props.title || 'earthquake'} ${props.place || 'disaster'}`.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').trim()\n    }\n  }\n];"
+      },
+      "id": "select-seed-001",
+      "name": "Select Disaster Seed",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -740,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "sidecar-ingest-001",
+      "name": "feral Sidecar Ingest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -500,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'http://127.0.0.1:8765/rag-search?q=' + encodeURIComponent($('Select Disaster Seed').item.json.rag_keywords) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "rag-search-001",
+      "name": "RAG Knowledge Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8644/webhooks/feral-review",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ disaster: $('Select Disaster Seed').item.json.disaster, positive_prompt: $('feral Sidecar Ingest').item.json.positive_prompt, negative_prompt: $('feral Sidecar Ingest').item.json.negative_prompt, rag_results: $('RAG Knowledge Search').item.json.results || [] }) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "hermes-review-001",
+      "name": "Hermes Review",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const ingestResult = $('feral Sidecar Ingest').item.json;\nconst ragResult = $('RAG Knowledge Search').item.json;\nconst hermesResult = $('Hermes Review').item.json;\n\nconst packet = {\n  run_id: ingestResult.run_id,\n  created_at: new Date().toISOString(),\n  feral_ingest: {\n    prompt_packet_path: ingestResult.prompt_packet_path,\n    positive_prompt: ingestResult.positive_prompt,\n    negative_prompt: ingestResult.negative_prompt,\n    habitat_feature_count: ingestResult.habitat_feature_count\n  },\n  rag_knowledge: {\n    query: ragResult.query,\n    results: (ragResult.results || []).slice(0, 3).map(r => ({\n      run_id: r.run_id,\n      score: r.score,\n      prompt_snippet: (r.positive_prompt || '').slice(0, 200)\n    }))\n  },\n  hermes_review: hermesResult,\n  status: 'e2e_scaffold_complete'\n};\n\nreturn [{ json: packet }];"
+      },
+      "id": "merge-format-001",
+      "name": "Merge & Format",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const packet = $json;\nconst fs = require('fs');\nconst path = require('path');\n\nconst outputDir = '/media/kz003/atelier/feral/outputs/runs/' + packet.run_id;\nif (!fs.existsSync(outputDir)) {\n  fs.mkdirSync(outputDir, { recursive: true });\n}\n\nconst outputPath = path.join(outputDir, 'e2e-scaffold-packet.json');\nfs.writeFileSync(outputPath, JSON.stringify(packet, null, 2), 'utf-8');\n\nreturn [{\n  json: {\n    run_id: packet.run_id,\n    output_path: outputPath,\n    status: packet.status,\n    summary: `Feral E2E scaffold complete. Prompt: ${packet.feral_ingest?.positive_prompt?.slice(0, 100)}...`\n  }\n}];"
+      },
+      "id": "save-packet-001",
+      "name": "Save Final Packet",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger (every 12h)": {
+      "main": [
+        [
+          {
+            "node": "Fetch Disaster Data (USGS)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Disaster Data (USGS)": {
+      "main": [
+        [
+          {
+            "node": "Select Disaster Seed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Disaster Seed": {
+      "main": [
+        [
+          {
+            "node": "feral Sidecar Ingest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "feral Sidecar Ingest": {
+      "main": [
+        [
+          {
+            "node": "RAG Knowledge Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAG Knowledge Search": {
+      "main": [
+        [
+          {
+            "node": "Hermes Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hermes Review": {
+      "main": [
+        [
+          {
+            "node": "Merge & Format",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge & Format": {
+      "main": [
+        [
+          {
+            "node": "Save Final Packet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Tokyo",
+    "saveManualExecutions": true
+  },
+  "versionId": "20260527-feral-end-to-end-scaffold",
+  "meta": {
+    "project": "feral",
+    "workflow_kind": "End-to-End Scaffold: USGS → Sidecar → RAG → Hermes → E2E Packet"
+  },
+  "id": "feral-end-to-end-scaffold",
+  "tags": []
+}

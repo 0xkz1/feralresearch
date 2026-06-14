@@ -1,0 +1,43 @@
+[
+  {
+    "module": "cms",
+    "keywords": [
+      "cms"
+    ],
+    "top_paths": [
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/build/CSSOM.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSConditionRule.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSContainerRule.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSCounterStyleRule.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSDocumentRule.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSFontFaceRule.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSGroupingRule.js",
+      "node_modules/.pnpm/@acemir+cssom@0.9.31/node_modules/@acemir/cssom/lib/CSSHostRule.js"
+    ],
+    "status": "success",
+    "summary": "cms"
+  },
+  {
+    "module": "engine",
+    "keywords": [
+      "engine"
+    ],
+    "top_paths": [
+      "agents/feral_sidecar.py"
+    ],
+    "status": "success",
+    "summary": "engine"
+  },
+  {
+    "module": "web",
+    "keywords": [
+      "web"
+    ],
+    "top_paths": [
+      "feral-api.js",
+      "feral.js"
+    ],
+    "status": "success",
+    "summary": "web"
+  }
+]

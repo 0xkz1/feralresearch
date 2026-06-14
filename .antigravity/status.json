@@ -1,0 +1,28 @@
+{
+  "refresh_run_id": "20260614T135035089619Z",
+  "generated_at": "2026-06-14T13:50:35.089641+00:00",
+  "overall_status": "partial",
+  "stages": {
+    "scan": "success",
+    "conventions": "success",
+    "structure": "success",
+    "knowledge_graph": "success",
+    "indexes": "success",
+    "module_docs": "success",
+    "git_insights": "partial",
+    "module_registry": "success"
+  },
+  "modules": {
+    "web": "success",
+    "cms": "success",
+    "engine": "success"
+  },
+  "failures": [
+    {
+      "stage": "git_insights",
+      "module": null,
+      "group": null,
+      "reason": "litellm.InternalServerError: InternalServerError: OpenAIException - EOF"
+    }
+  ]
+}

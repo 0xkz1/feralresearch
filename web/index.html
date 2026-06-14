@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feral Research · prototype launcher</title>
+  <link rel="stylesheet" href="feral-system.css" />
+</head>
+<body>
+  <header class="topnav" data-od-id="topnav">
+    <div class="container topnav-inner">
+      <a class="brand-mark" href="landing.html" aria-label="Feral Research home"><span class="brand-dot"></span><span>Feral Research</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="landing.html">Home</a>
+        <a href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero" data-od-id="launcher-hero">
+      <div class="container hero-split">
+        <div class="stack stack-lg">
+          <p class="eyebrow">Prototype set</p>
+          <h1>Feral Research — a living archive of wildlife under collapse.</h1>
+          <p class="lead">Each page below is a real product surface: live research logs, system dashboards, and visual studies, fed by a local sidecar API.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="landing.html">Open Feral homepage</a>
+            <a class="btn btn-secondary" href="dashboard.html">Inspect system view</a>
+          </div>
+          <p class="meta" style="margin-top: var(--space-4);"><span class="conn-status" data-state="checking" id="conn-badge">checking</span> Sidecar at 127.0.0.1:8765</p>
+        </div>
+        <aside class="specimen" aria-label="Ecosystem layer plate">
+          <div class="specimen-plate">
+            <p class="meta">FERAL-ECOSYSTEM · SEPARATED SURFACES</p>
+            <div class="layer-list">
+              <div class="layer">
+                <span class="tag">Live research system</span>
+                <p>Logs, field observations, visual studies, and readable system context — all from real data.</p>
+              </div>
+              <div class="layer">
+                <span class="tag">Backend engine</span>
+                <p>Scraping, database records, analysis, and prompt packets behind APIs at localhost:8765.</p>
+              </div>
+            </div>
+            <p class="meta">Designed to move later to feralresearch.com without changing the authored product surface.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="surface-list">
+      <div class="container stack stack-lg">
+        <div class="stack">
+          <p class="eyebrow">Included surfaces</p>
+          <h2>Each screen is a real product surface, not a viewport toggle.</h2>
+        </div>
+        <div class="grid screen-grid">
+          <a class="screen-card" href="landing.html">
+            <div class="stack">
+              <span class="tag">Homepage</span>
+              <h3>Feral Research landing page</h3>
+              <p class="caption">Independent lab/media identity, clear employer signal, and portfolio-to-project separation.</p>
+            </div>
+            <span class="btn btn-ghost">Open</span>
+          </a>
+          <a class="screen-card" href="research-log.html">
+            <div class="stack">
+              <span class="tag">Research log</span>
+              <h3>Dated field observations</h3>
+              <p class="caption">Readable research entries with source, habitat, visual interpretation, and filter states.</p>
+            </div>
+            <span class="btn btn-ghost">Open</span>
+          </a>
+          <a class="screen-card" href="dashboard.html">
+            <div class="stack">
+              <span class="tag">Data dashboard</span>
+              <h3>Backend outputs without SaaS chrome</h3>
+              <p class="caption">Pipeline state, live API metrics, and system health shown as a lab console.</p>
+            </div>
+            <span class="btn btn-ghost">Open</span>
+          </a>
+          <a class="screen-card" href="gallery.html">
+            <div class="stack">
+              <span class="tag">Gallery</span>
+              <h3>Generated images plus authorship</h3>
+              <p class="caption">Prompt packets, sketches, paintings, and notes presented as a visual research archive.</p>
+            </div>
+            <span class="btn btn-ghost">Open</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container foot-inner">
+      <span>Feral Research prototype set</span>
+      <span class="meta">Research-first · data-driven · author-led</span>
+    </div>
+  </footer>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-panel">
+      <div class="menu-bar">
+        <div class="menu-toggles">
+          <button class="menu-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle dark / light theme"><svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="menu-toggle-btn" id="lang-toggle" type="button" aria-label="Toggle language">EN</button>
+        </div>
+        <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="menu-nav" aria-label="Site navigation">
+        <a href="landing.html">Home</a>
+        <a href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="feral.js"></script>
+  <script src="feral-api.js"></script>
+  <script>
+    function updateBadge(connected) {
+      const badge = document.getElementById('conn-badge');
+      if (!badge) return;
+      badge.textContent = connected ? 'connected' : 'offline';
+      badge.setAttribute('data-state', connected ? 'connected' : 'disconnected');
+    }
+    FeralAPI.onConnectionChange(updateBadge);
+    FeralAPI.startPolling();
+    FeralAPI.checkHealth().then(updateBadge);
+  </script>
+</body>
+</html>

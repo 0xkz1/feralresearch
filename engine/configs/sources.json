@@ -1,0 +1,42 @@
+{
+  "project": "feral",
+  "sidecar": {
+    "host": "127.0.0.1",
+    "port": 8765
+  },
+  "disaster_sources": {
+    "usgs_significant_month": {
+      "kind": "earthquake_geojson",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+      "enabled": true
+    },
+    "usgs_m45_week": {
+      "kind": "earthquake_geojson",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+      "enabled": true
+    },
+    "gdacs_rss": {
+      "kind": "rss",
+      "url": "https://www.gdacs.org/xml/rss.xml",
+      "enabled": true
+    }
+  },
+  "habitat_mapper": {
+    "overpass_url": "https://overpass-api.de/api/interpreter",
+    "radius_meters": 15000,
+    "max_features": 60
+  },
+  "browser_use": {
+    "webui_url": "http://127.0.0.1:7788",
+    "task_output_dir": "/media/kz003/atelier/feral/engine/outputs/runs"
+  },
+  "comfyui": {
+    "api_url": "http://127.0.0.1:8188/prompt",
+    "default_checkpoint": "juggernautXL_v8Rundiffusion.safetensors",
+    "default_width": 1024,
+    "default_height": 1024,
+    "default_steps": 28,
+    "default_cfg": 7.0
+  }
+}
+

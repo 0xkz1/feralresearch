@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feral Research · visual archive</title>
+  <link rel="stylesheet" href="feral-system.css" />
+</head>
+<body>
+  <header class="topnav" data-od-id="topnav">
+    <div class="container topnav-inner">
+      <a class="brand-mark" href="landing.html" aria-label="Feral Research home"><span class="brand-dot"></span><span>Feral Research</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="landing.html">Home</a>
+        <a href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero" data-od-id="gallery-hero">
+      <div class="container two-col">
+        <div class="stack stack-lg">
+          <p class="eyebrow">Visual archive</p>
+          <h1>Studies archived with their research context.</h1>
+          <p class="lead">The gallery avoids the impression that AI generated everything. Each image study is paired with source context, sketch intent, painting notes, and the human decision it supports.</p>
+        </div>
+        <div class="stack">
+          <div class="tabs" data-tabs="gallery" role="tablist" aria-label="Gallery view">
+            <button class="tab-button" type="button" data-tab="studies" aria-selected="true">Studies</button>
+            <button class="tab-button" type="button" data-tab="packets" aria-selected="false">Prompt packets</button>
+            <button class="tab-button" type="button" data-tab="notes" aria-selected="false">Notes</button>
+          </div>
+          <span class="conn-status" data-state="checking" id="conn-badge" style="margin-top: var(--space-4);">checking</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studies tab -->
+    <section class="section" data-od-id="gallery-studies" data-tab-panel="gallery" data-tab-value="studies">
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Visual studies</p>
+            <h2>Archive plates for image-making, not finished claims.</h2>
+          </div>
+          <p class="lead">Generated studies, sketches, and painting references filed with source data, composition intent, and the human decisions they support.</p>
+        </div>
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Feral dog silhouette at wetland threshold">
+                <path class="study-stroke" d="M20 110 Q40 95 60 90 L60 70 Q58 62 62 60 Q68 56 72 60 L72 30 Q72 24 76 20 L80 12 L84 20 Q86 28 84 35 L80 50 L82 60 Q90 62 98 60 L98 75 Q96 82 90 85 L70 90 Q50 95 30 105 Z"/>
+                <path class="study-surface" d="M0 130 Q40 126 80 128 Q120 130 160 127 Q200 124 200 132 L200 150 L0 150 Z"/>
+                <line class="study-accent" x1="30" y1="120" x2="50" y2="125"/>
+                <line class="study-accent" x1="130" y1="125" x2="160" y2="122"/>
+                <circle class="study-fill" cx="40" cy="115" r="1.5"/>
+                <circle class="study-fill" cx="140" cy="120" r="1.5"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Wetland threshold</span>
+              <h3>Dog-form silhouette at receding flood line</h3>
+              <p class="caption">Generated reference study, held for hand-painted atmosphere and distance cues.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Hoof print track pattern in mud">
+                <path class="study-stroke" d="M30 90 Q32 84 38 82 L42 84 Q44 80 46 84 L44 90 Q42 96 38 96 Z"/>
+                <path class="study-stroke" d="M65 100 Q67 94 73 92 L77 94 Q79 90 81 94 L79 100 Q77 106 73 106 Z"/>
+                <path class="study-stroke" d="M100 88 Q102 82 108 80 L112 82 Q114 78 116 82 L114 88 Q112 94 108 94 Z"/>
+                <path class="study-stroke" d="M140 96 Q142 90 148 88 L152 90 Q154 86 156 90 L154 96 Q152 102 148 102 Z"/>
+                <line class="study-accent" x1="55" y1="50" x2="55" y2="80"/>
+                <line class="study-accent" x1="125" y1="42" x2="125" y2="70"/>
+                <path class="study-surface" d="M0 115 Q50 112 100 114 Q150 116 200 113 L200 150 L0 150 Z"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Sketch study</span>
+              <h3>Hoof marks near road infrastructure</h3>
+              <p class="caption">Composition note for Feral Bestiary plate.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Topographic habitat map with markers">
+                <path class="study-stroke" d="M0 10 Q50 20 100 12 Q150 4 200 15"/>
+                <path class="study-stroke" d="M0 35 Q40 45 80 38 Q120 30 160 42 Q180 46 200 40"/>
+                <path class="study-surface" d="M0 80 Q50 72 100 78 Q150 84 200 76 L200 100 Q150 108 100 102 Q50 96 0 104 Z"/>
+                <circle class="study-fill" cx="60" cy="50" r="3"/>
+                <circle class="study-fill" cx="120" cy="35" r="2.5"/>
+                <line class="study-accent" x1="60" y1="47" x2="120" y2="32"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Habitat trace</span>
+              <h3>Farm edge, drainage channel, woodland cover</h3>
+              <p class="caption">Habitat features from Overpass before image generation.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Livestock silhouette against damaged fencing">
+                <path class="study-stroke" d="M30 75 L40 75 L45 60 L55 75 L65 75 L65 85 L55 85 L50 90 L40 90 L35 85 L30 85 Z"/>
+                <path class="study-stroke" d="M80 80 L90 45 Q92 40 96 42 L100 50 Q102 58 98 64 L95 80 Z"/>
+                <line class="study-surface" x1="0" y1="82" x2="25" y2="82"/>
+                <line class="study-stroke" x1="25" y1="82" x2="30" y2="70"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Painting reference</span>
+              <h3>Livestock near damaged fence line</h3>
+              <p class="caption">Candidate study for manual reinterpretation.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Cat-form silhouette in rubble landscape">
+                <path class="study-stroke" d="M50 95 Q52 88 56 86 L58 78 Q56 72 60 68 Q66 64 72 68 L70 78 L68 86 Q74 88 76 95 Q74 100 68 100 Q58 100 56 95 Z"/>
+                <path class="study-stroke" d="M85 95 Q87 88 91 86 L93 78 Q91 72 95 68 Q101 64 107 68 L105 78 L103 86 Q109 88 111 95 Q109 100 103 100 Q93 100 91 95 Z"/>
+                <rect class="study-surface" x="10" y="105" width="30" height="8" rx="1"/>
+                <rect class="study-surface" x="140" y="108" width="45" height="6" rx="1"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Urban feral study</span>
+              <h3>Cat-form pair in rubble and debris</h3>
+              <p class="caption">Post-disaster urban context study.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Skeletal anatomical study">
+                <path class="study-stroke" d="M80 10 Q82 20 86 28 Q90 36 94 44 Q98 52 100 60"/>
+                <path class="study-stroke" d="M100 60 Q100 72 96 80 Q92 86 86 90"/>
+                <path class="study-stroke" d="M100 60 L106 58 Q110 62 110 70"/>
+                <circle class="study-fill" cx="100" cy="60" r="4"/>
+                <circle class="study-fill" cx="86" cy="90" r="3.5"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Anatomical reference</span>
+              <h3>Forelimb skeletal study for Bestiary plate</h3>
+              <p class="caption">Derived from generated imagery and field notes.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Aerial reconnaissance view">
+                <rect class="study-surface" x="10" y="10" width="55" height="30" rx="2"/>
+                <rect class="study-surface" x="70" y="15" width="40" height="22" rx="2"/>
+                <line class="study-stroke" x1="37" y1="10" x2="37" y2="6"/>
+                <line class="study-stroke" x1="37" y1="6" x2="70" y2="6"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Site reconnaissance</span>
+              <h3>Farm complex layout with movement corridor</h3>
+              <p class="caption">Aerial view with inferred animal paths.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Water edge with animal disturbance marks">
+                <path class="study-stroke" d="M0 95 Q30 100 60 98 Q90 96 120 100 Q150 104 180 100 Q200 96 200 100"/>
+                <path class="study-surface" d="M0 95 Q30 100 60 98 Q90 96 120 100 Q150 104 180 100 Q200 96 200 100 L200 130 L0 130 Z"/>
+                <path class="study-stroke" d="M30 90 L32 80 L34 90"/>
+                <path class="study-stroke" d="M70 92 L72 82 L74 92"/>
+              </svg>
+            </div>
+            <div class="stack">
+              <span class="tag">Water edge study</span>
+              <h3>Bank disturbance pattern at drainage channel</h3>
+              <p class="caption">Marks suggest repeated animal use over days.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prompt packets tab — populated from API -->
+    <section class="section" data-od-id="gallery-packets" data-tab-panel="gallery" data-tab-value="packets" hidden>
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Prompt packets</p>
+            <h2>Keep machine prompts inspectable and subordinate.</h2>
+          </div>
+          <div class="stack">
+            <p class="lead">Prompt packets belong in the archive as process evidence. Each entry below is a real run from the sidecar database, shown with its full prompt.</p>
+            <button class="refresh-btn" id="btn-refresh-packets" type="button">⟳ Refresh from sidecar</button>
+          </div>
+        </div>
+        <div id="packets-container">
+          <div class="skeleton skeleton-row" style="margin-bottom: 8px;"></div>
+          <div class="skeleton skeleton-row short" style="margin-bottom: 8px;"></div>
+          <div class="skeleton skeleton-row med"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes tab -->
+    <section class="section" data-od-id="gallery-notes" data-tab-panel="gallery" data-tab-value="notes" hidden>
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Author notes</p>
+            <h2>The human layer is part of the archive.</h2>
+          </div>
+          <p class="lead">Each study needs a short note about what the artist is deciding: framing, species ambiguity, disaster context, evidence level, and what should not be overclaimed.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="module stack">
+            <h3>Do not anthropomorphize the subject.</h3>
+            <p class="caption">The work is about ecological displacement and survival pressure, not sentimental mascot imagery.</p>
+          </article>
+          <article class="module stack">
+            <h3>Leave uncertainty visible.</h3>
+            <p class="caption">When source data is incomplete, the image should show ambiguity instead of pretending the event is fully known.</p>
+          </article>
+          <article class="module stack">
+            <h3>Use generated images as material.</h3>
+            <p class="caption">Generated outputs enter the studio process as studies, prompts, and references for authored painting and writing.</p>
+          </article>
+          <article class="module stack">
+            <h3>Position the animal at a distance.</h3>
+            <p class="caption">Close-up portraits suggest domestication. Feral subjects read better when placed in landscape, seen through context rather than stared at.</p>
+          </article>
+          <article class="module stack">
+            <h3>Show the infrastructure that displaced them.</h3>
+            <p class="caption">Every feral animal exists because of a human decision: war, evacuation, dam construction, mine expansion. The image should carry that origin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container foot-inner">
+      <span>Visual archive · Feral Research</span>
+      <span class="meta">Prompt packet → study → sketch → painting note</span>
+    </div>
+  </footer>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-panel">
+      <div class="menu-bar">
+        <div class="menu-toggles">
+          <button class="menu-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle dark / light theme"><svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="menu-toggle-btn" id="lang-toggle" type="button" aria-label="Toggle language">EN</button>
+        </div>
+        <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="menu-nav" aria-label="Site navigation">
+        <a href="landing.html">Home</a>
+        <a href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a aria-current="page" href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="feral.js"></script>
+  <script src="feral-api.js"></script>
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => document.querySelectorAll(sel);
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function formatDate(iso) {
+      try {
+        return new Date(iso).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+        });
+      } catch { return iso || '—'; }
+    }
+
+    function truncate(str, len) {
+      if (!str) return '';
+      return str.length > len ? str.substring(0, len) + '…' : str;
+    }
+
+    function updateConnectionBadge(connected) {
+      const badge = $('#conn-badge');
+      if (!badge) return;
+      badge.textContent = connected ? 'connected' : 'offline';
+      badge.setAttribute('data-state', connected ? 'connected' : 'disconnected');
+    }
+
+    async function loadPackets() {
+      const container = $('#packets-container');
+      let runs = await FeralAPI.searchRuns('feral disaster habitat');
+      if (!runs || runs.length === 0) runs = FeralAPI.getMockRuns();
+
+      container.innerHTML = `
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Run ID</th>
+                <th>Created</th>
+                <th>Score</th>
+                <th>Prompt (first 140 chars)</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${runs.map((r) => `
+                <tr>
+                  <td><span class="inline-code">${escapeHTML(r.run_id)}</span></td>
+                  <td>${formatDate(r.created_at)}</td>
+                  <td><span class="num">${(r.score * 100).toFixed(0)}%</span></td>
+                  <td>${escapeHTML(truncate(r.positive_prompt, 140))}</td>
+                  <td><span class="status ${r._mock ? 'neutral' : 'good'}">${r._mock ? 'Demo' : 'Live'}</span></td>
+                </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>`;
+    }
+
+    $('#btn-refresh-packets').addEventListener('click', loadPackets);
+
+    FeralAPI.onConnectionChange(updateConnectionBadge);
+    FeralAPI.startPolling();
+    FeralAPI.checkHealth().then(updateConnectionBadge);
+    loadPackets();
+  </script>
+</body>
+</html>

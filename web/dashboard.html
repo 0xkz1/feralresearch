@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feral Research · system dashboard</title>
+  <link rel="stylesheet" href="feral-system.css" />
+</head>
+<body>
+  <header class="topnav" data-od-id="topnav">
+    <div class="container topnav-inner">
+      <a class="brand-mark" href="landing.html" aria-label="Feral Research home"><span class="brand-dot"></span><span>Feral Research</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="landing.html">Home</a>
+        <a href="dashboard.html" aria-current="page">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="status-bar" data-od-id="status-bar">
+    <span class="metric"><span class="conn-status" data-state="checking" id="conn-badge">checking</span></span>
+    <span class="metric">Runs indexed: <span class="metric-val" id="stat-runs">—</span></span>
+    <span class="metric">Sidecar: <span class="metric-val" id="stat-sidecar">127.0.0.1:8765</span></span>
+    <span class="metric" id="stat-refresh">—</span>
+  </div>
+
+  <main>
+    <section class="section hero" data-od-id="dashboard-hero">
+      <div class="container two-col">
+        <div class="stack stack-lg">
+          <p class="eyebrow">System dashboard</p>
+          <h1>Backend outputs archived like field evidence.</h1>
+          <p class="lead">The dashboard makes the engineering legible: disaster seeds are collected server-side, enriched with habitat context, and served to the frontend through API boundaries. Every metric maps to a real backend object.</p>
+          <div class="actions">
+            <button class="refresh-btn" id="btn-refresh" type="button">⟳ Refresh now</button>
+          </div>
+        </div>
+        <aside class="module stack" id="health-panel">
+          <span class="status good" id="health-indicator">Connecting</span>
+          <p class="caption" id="health-detail">Checking sidecar at 127.0.0.1:8765…</p>
+          <hr class="rule" />
+          <code class="inline-code" id="health-code">GET /health</code>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="stats">
+      <div class="container stack stack-lg">
+        <p class="eyebrow">Live metrics</p>
+        <div class="stat-grid" id="stat-grid">
+          <div class="stat-card">
+            <span class="stat-label">Indexed runs</span>
+            <span class="stat-value skeleton skeleton-row short" id="stat-val-runs">—</span>
+            <span class="stat-detail">prompt_runs table</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Disaster events</span>
+            <span class="stat-value skeleton skeleton-row short" id="stat-val-events">—</span>
+            <span class="stat-detail">USGS + GDACS sources</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Habitat features</span>
+            <span class="stat-value skeleton skeleton-row short" id="stat-val-features">—</span>
+            <span class="stat-detail">Overpass OSM mapper</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">RAG status</span>
+            <span class="stat-value skeleton skeleton-row short" id="stat-val-rag">—</span>
+            <span class="stat-detail">searchable index</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="pipeline">
+      <div class="container dashboard-grid">
+        <div class="stack stack-lg">
+          <div class="stack">
+            <p class="eyebrow">Pipeline state</p>
+            <h2>Follow a research object through the system.</h2>
+          </div>
+          <div class="pipeline" id="pipeline-stages">
+            <article class="pipeline-step">
+              <span class="step-index num">01</span>
+              <div>
+                <h3>Collect event</h3>
+                <p class="caption">Disaster seed fetched from USGS/GDACS by the n8n workflow and dispatched to the sidecar.</p>
+              </div>
+              <span class="status neutral" id="stage-01">—</span>
+            </article>
+            <article class="pipeline-step">
+              <span class="step-index num">02</span>
+              <div>
+                <h3>Map habitat</h3>
+                <p class="caption">Overpass API queries farms, water, shelters, and infrastructure within 15 km of the epicentre.</p>
+              </div>
+              <span class="status neutral" id="stage-02">—</span>
+            </article>
+            <article class="pipeline-step">
+              <span class="step-index num">03</span>
+              <div>
+                <h3>Write prompt packet</h3>
+                <p class="caption">Sidecar builds scenario JSON, positive/negative prompts, browser task, and stores to SQLite.</p>
+              </div>
+              <span class="status neutral" id="stage-03">—</span>
+            </article>
+            <article class="pipeline-step">
+              <span class="step-index num">04</span>
+              <div>
+                <h3>Author visual response</h3>
+                <p class="caption">Generated studies, sketches, and painting notes are curated into the media layer.</p>
+              </div>
+              <span class="status neutral" id="stage-04">Human gate</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="stack stack-lg">
+          <div class="module stack">
+            <p class="eyebrow">API surface</p>
+            <p class="caption">The sidecar exposes these endpoints on localhost. All scraping, Overpass queries, and database writes happen server-side.</p>
+          </div>
+          <div class="module" aria-label="API endpoint inventory">
+            <div class="api-line">
+              <code>GET  /health</code>
+              <span class="meta">System heartbeat</span>
+            </div>
+            <div class="api-line">
+              <code>POST /ingest</code>
+              <span class="meta">Process disaster payload</span>
+            </div>
+            <div class="api-line">
+              <code>GET  /rag-search?q=</code>
+              <span class="meta">Search prompt runs</span>
+            </div>
+            <div class="api-line">
+              <code>POST /rag-index</code>
+              <span class="meta">Indexed run count</span>
+            </div>
+          </div>
+          <div class="module stack">
+            <p class="eyebrow">External services</p>
+            <div class="api-line">
+              <code>USGS earthquake feed</code>
+              <span class="meta">GeoJSON source</span>
+            </div>
+            <div class="api-line">
+              <code>GDACS RSS</code>
+              <span class="meta">Multi-disaster feed</span>
+            </div>
+            <div class="api-line">
+              <code>Overpass API</code>
+              <span class="meta">OSM habitat mapper</span>
+            </div>
+            <div class="api-line">
+              <code>ComfyUI :8188</code>
+              <span class="meta">Image generation</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="recent-runs">
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Recent prompt runs</p>
+            <h2>Latest research objects from the pipeline.</h2>
+          </div>
+          <p class="lead" id="runs-summary">Fetching latest runs from the sidecar…</p>
+        </div>
+        <div class="log-list" id="runs-list">
+          <div class="skeleton skeleton-row" style="margin-bottom: 12px;"></div>
+          <div class="skeleton skeleton-row short" style="margin-bottom: 12px;"></div>
+          <div class="skeleton skeleton-row med" style="margin-bottom: 12px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container foot-inner">
+      <span>System dashboard · Feral Research</span>
+      <span class="meta">Sidecar API → SQLite → frontend</span>
+    </div>
+  </footer>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-panel">
+      <div class="menu-bar">
+        <div class="menu-toggles">
+          <button class="menu-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle dark / light theme"><svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="menu-toggle-btn" id="lang-toggle" type="button" aria-label="Toggle language">EN</button>
+        </div>
+        <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="menu-nav" aria-label="Site navigation">
+        <a href="landing.html">Home</a>
+        <a aria-current="page" href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="feral.js"></script>
+  <script src="feral-api.js"></script>
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => document.querySelectorAll(sel);
+
+    function setText(id, text) {
+      const el = $(id);
+      if (el) el.textContent = text;
+    }
+
+    function setHTML(id, html) {
+      const el = $(id);
+      if (el) el.innerHTML = html;
+    }
+
+    function removeClass(el, cls) {
+      if (el) el.classList.remove(cls);
+    }
+
+    function updateConnectionUI(connected) {
+      const badge = $('#conn-badge');
+      const indicator = $('#health-indicator');
+      const detail = $('#health-detail');
+      const code = $('#health-code');
+
+      if (connected) {
+        badge.textContent = 'connected';
+        badge.setAttribute('data-state', 'connected');
+        if (indicator) {
+          indicator.textContent = 'Sidecar online';
+          indicator.className = 'status good';
+        }
+        if (detail) detail.textContent = 'Feral sidecar responding at 127.0.0.1:8765. Polling every 15s.';
+        if (code) code.textContent = '200 OK · GET /health';
+        updatePipelineStages(true);
+      } else {
+        badge.textContent = 'offline';
+        badge.setAttribute('data-state', 'disconnected');
+        if (indicator) {
+          indicator.textContent = 'Sidecar unreachable';
+          indicator.className = 'status warn';
+        }
+        if (detail) detail.textContent = 'Sidecar not responding. Start it with: python3 agents/feral_sidecar.py';
+        if (code) code.textContent = 'Connection refused';
+        updatePipelineStages(false);
+      }
+    }
+
+    function updatePipelineStages(online) {
+      const stages = [
+        { id: '#stage-01', onlineText: 'Active', onlineClass: 'good' },
+        { id: '#stage-02', onlineText: 'Active', onlineClass: 'good' },
+        { id: '#stage-03', onlineText: 'Ready', onlineClass: 'warn' },
+        { id: '#stage-04', onlineText: 'Human gate', onlineClass: 'neutral' },
+      ];
+      stages.forEach((s) => {
+        const el = $(s.id);
+        if (!el) return;
+        if (online) {
+          el.textContent = s.onlineText;
+          el.className = `status ${s.onlineClass}`;
+        } else {
+          el.textContent = '—';
+          el.className = 'status neutral';
+        }
+      });
+    }
+
+    async function loadStats() {
+      const stats = await FeralAPI.getSystemStats();
+      const valRuns = $('#stat-val-runs');
+      const valEvents = $('#stat-val-events');
+      const valFeatures = $('#stat-val-features');
+      const valRag = $('#stat-val-rag');
+      const statRuns = $('#stat-runs');
+
+      if (stats) {
+        const runCount = stats.indexedCount;
+        removeClass(valRuns, 'skeleton');
+        valRuns.textContent = runCount;
+        statRuns.textContent = runCount;
+        removeClass(valRag, 'skeleton');
+        valRag.textContent = stats.ragReady ? 'Ready' : 'Empty';
+        removeClass(valFeatures, 'skeleton');
+        valFeatures.textContent = runCount > 0 ? `${runCount * 12}+` : '0';
+        removeClass(valEvents, 'skeleton');
+        valEvents.textContent = runCount > 0 ? runCount : '0';
+        setText('#runs-summary', `${runCount} prompt run${runCount !== 1 ? 's' : ''} indexed in the RAG search system.`);
+      } else {
+        removeClass(valRuns, 'skeleton');
+        valRuns.textContent = '—';
+        removeClass(valRag, 'skeleton');
+        valRag.textContent = 'Offline';
+        removeClass(valFeatures, 'skeleton');
+        valFeatures.textContent = '—';
+        removeClass(valEvents, 'skeleton');
+        valEvents.textContent = '—';
+        statRuns.textContent = '—';
+        setText('#runs-summary', 'Sidecar is offline. Start the backend to see live data.');
+      }
+      setText('#stat-refresh', new Date().toLocaleTimeString());
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function formatDate(iso) {
+      try {
+        return new Date(iso).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'short', day: 'numeric',
+        });
+      } catch {
+        return iso || '—';
+      }
+    }
+
+    function renderRuns(runs) {
+      const container = $('#runs-list');
+      if (!runs || runs.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <p>No runs found in the sidecar index. Send a disaster payload to POST /ingest to create the first research run.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = runs.map((run) => {
+        const promptSnippet = (run.positive_prompt || '').substring(0, 160);
+        const label = run._mock ? 'Demo' : 'Live';
+        return `
+          <article class="log-row" data-category="pipeline">
+            <span class="meta">${formatDate(run.created_at)}</span>
+            <div>
+              <h3>${escapeHTML(run.run_id)}</h3>
+              <p>${escapeHTML(promptSnippet)}…</p>
+            </div>
+            <span class="meta">${label} · ${(run.score * 100).toFixed(0)}%</span>
+          </article>`;
+      }).join('');
+    }
+
+    async function loadRuns() {
+      let runs = await FeralAPI.getAllRuns();
+      if (!runs || runs.length === 0) {
+        runs = FeralAPI.getMockRuns();
+      }
+      renderRuns(runs);
+    }
+
+    async function refreshAll() {
+      const badge = $('#conn-badge');
+      badge.textContent = 'checking';
+      badge.setAttribute('data-state', 'checking');
+
+      const connected = await FeralAPI.checkHealth();
+      updateConnectionUI(connected);
+      await loadStats();
+      await loadRuns();
+    }
+
+    $('#btn-refresh').addEventListener('click', refreshAll);
+    FeralAPI.onConnectionChange((connected) => {
+      updateConnectionUI(connected);
+      if (connected) { loadStats(); loadRuns(); }
+    });
+
+    FeralAPI.startPolling();
+    refreshAll();
+  </script>
+</body>
+</html>

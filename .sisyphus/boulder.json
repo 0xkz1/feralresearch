@@ -1,0 +1,32 @@
+{
+  "active_plan": "/media/kz003/atelier/feral/.sisyphus/plans/feral-end-to-end-scaffold.md",
+  "started_at": "2026-05-26T17:17:53.486Z",
+  "session_ids": [
+    "ses_1b8248e2affeJn17BwAhYiMkpo"
+  ],
+  "session_origins": {
+    "ses_1b8248e2affeJn17BwAhYiMkpo": "direct"
+  },
+  "plan_name": "feral-end-to-end-scaffold",
+  "agent": "atlas",
+  "task_sessions": {
+    "todo:3": {
+      "task_key": "todo:3",
+      "task_label": "3",
+      "task_title": "RAG: sidecar `/rag-search` エンドポイント追加",
+      "session_id": "ses_19a861ea2ffeErU4Bedf4wtVAC",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-low",
+      "updated_at": "2026-05-26T18:18:31.656Z"
+    },
+    "todo:7": {
+      "task_key": "todo:7",
+      "task_label": "7",
+      "task_title": "n8n エンドツーエンドワークフロー構築",
+      "session_id": "ses_19a7b3519ffef2ZWq7AaGgwKfJ",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-05-26T18:51:03.156Z"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# User explicitly wants vault private
+vault/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Caches
+__pycache__/
+*.pyc
+.ruff_cache/
+tsconfig.tsbuildinfo
+
+# Build outputs / generated
+outputs/
+
+# CRG graph database (auto-generated)
+.code-review-graph/
+
+# OS
+.DS_Store
+Thumbs.db

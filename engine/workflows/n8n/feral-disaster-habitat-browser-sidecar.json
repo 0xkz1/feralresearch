@@ -1,0 +1,138 @@
+{
+  "name": "feral - Disaster to Habitat Browser Sidecar",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4e73b990-d36a-43f1-a469-d5bc63dd02ec",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "e44c7517-f2cd-4c20-bdeb-2d15d3660f9b",
+      "name": "Fetch USGS Significant Earthquakes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -500,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const features = $json.features || [];\nconst usable = features\n  .filter((feature) => feature.geometry && Array.isArray(feature.geometry.coordinates))\n  .sort((a, b) => (b.properties?.mag || 0) - (a.properties?.mag || 0));\n\nif (!usable.length) {\n  throw new Error('No usable USGS event with coordinates was returned.');\n}\n\nconst selected = usable[0];\nconst [longitude, latitude, depthKm] = selected.geometry.coordinates;\nconst props = selected.properties || {};\n\nreturn [\n  {\n    json: {\n      disaster: {\n        source: 'usgs_earthquake_significant_month',\n        id: selected.id,\n        title: props.title || 'USGS earthquake event',\n        url: props.url,\n        occurred_at: props.time ? new Date(props.time).toISOString() : null,\n        latitude,\n        longitude,\n        depth_km: depthKm,\n        magnitude: props.mag,\n        place: props.place,\n        event_type: props.type || 'earthquake'\n      },\n      feral_intent: {\n        project: 'feral',\n        mode: 'Disaster-to-Feral + Habitat Mapper',\n        browser_sidecar: true,\n        art_direction: 'hyperreal animal-viewpoint disaster ecology, near-future speculative realism'\n      }\n    }\n  }\n];"
+      },
+      "id": "0c199367-dfda-4cab-85fd-49d144f02ad5",
+      "name": "Select Disaster Seed",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/ingest",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "6f4b5ae8-28fb-4c60-8c4b-efbeeb9f6d83",
+      "name": "feral Sidecar Ingest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "if (!$json.ok) {\n  throw new Error($json.error || 'feral sidecar failed');\n}\n\nreturn [\n  {\n    json: {\n      run_id: $json.run_id,\n      prompt_packet_path: $json.prompt_packet_path,\n      browser_use_task_path: $json.browser_use_task_path,\n      opencode_task_path: $json.opencode_task_path,\n      habitat_feature_count: $json.habitat_feature_count,\n      positive_prompt: $json.positive_prompt,\n      negative_prompt: $json.negative_prompt,\n      review_status: 'needs_human_review_before_comfyui'\n    }\n  }\n];"
+      },
+      "id": "ec630e3a-ea89-49de-ab68-b9a0f06ce2af8",
+      "name": "Prepare Human Review Packet",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch USGS Significant Earthquakes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch USGS Significant Earthquakes": {
+      "main": [
+        [
+          {
+            "node": "Select Disaster Seed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Disaster Seed": {
+      "main": [
+        [
+          {
+            "node": "feral Sidecar Ingest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "feral Sidecar Ingest": {
+      "main": [
+        [
+          {
+            "node": "Prepare Human Review Packet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Tokyo",
+    "saveManualExecutions": true
+  },
+  "versionId": "20260521-feral-disaster-habitat-browser-sidecar",
+  "meta": {
+    "project": "feral",
+    "workflow_kind": "Disaster-to-Feral + Habitat Mapper + browser-use sidecar"
+  },
+  "id": "feral-disaster-habitat-browser-sidecar",
+  "tags": []
+}

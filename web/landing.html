@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feral Research · living research media system</title>
+  <link rel="stylesheet" href="feral-system.css" />
+</head>
+<body>
+  <header class="topnav" data-od-id="topnav">
+    <div class="container topnav-inner">
+      <a class="brand-mark" href="landing.html" aria-label="Feral Research home"><span class="brand-dot"></span><span>Feral Research</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="landing.html" aria-current="page">Home</a>
+        <a href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero" data-od-id="hero">
+      <div class="container hero-split">
+        <div class="stack stack-lg">
+          <p class="eyebrow">Archive · lab · field notes</p>
+          <h1>Feral Research studies survival under collapse.</h1>
+          <p class="lead">A research-driven artistic media system by Kazuki Yunome: disaster signals, habitat context, machine interpretation, field notes, sketches, paintings, and generated studies become a living archive for future visual work.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="research-log.html">Read the latest logs</a>
+            <a class="btn btn-secondary" href="gallery.html">View visual studies</a>
+          </div>
+          <span class="conn-status" data-state="checking" id="conn-badge" style="margin-top: var(--space-4);">checking system</span>
+        </div>
+        <aside class="specimen" aria-label="Feral Research specimen plate">
+          <div class="specimen-plate">
+            <p class="meta">FIELD PACKET · DISASTER TO HABITAT</p>
+            <div class="study-visual" style="aspect-ratio: auto; min-height: 200px; border-color: color-mix(in oklab, var(--fg), transparent 80%);">
+              <svg viewBox="0 0 200 150" aria-label="Feral dog silhouette at wetland threshold">
+                <path class="study-stroke" d="M20 110 Q40 95 60 90 L60 70 Q58 62 62 60 Q68 56 72 60 L72 30 Q72 24 76 20 L80 12 L84 20 Q86 28 84 35 L80 50 L82 60 Q90 62 98 60 L98 75 Q96 82 90 85 L70 90 Q50 95 30 105 Z"/>
+                <path class="study-surface" d="M0 130 Q40 126 80 128 Q120 130 160 127 Q200 124 200 132 L200 150 L0 150 Z"/>
+                <line class="study-accent" x1="30" y1="120" x2="50" y2="125"/>
+                <line class="study-accent" x1="130" y1="125" x2="160" y2="122"/>
+                <circle class="study-fill" cx="40" cy="115" r="1.5"/>
+                <circle class="study-fill" cx="140" cy="120" r="1.5"/>
+                <text x="145" y="145" font-family="ui-monospace, monospace" font-size="7" fill="currentColor" opacity="0.25">plate·01</text>
+              </svg>
+            </div>
+            <div class="tag-row">
+              <span class="tag">USGS seed</span>
+              <span class="tag">Overpass habitat</span>
+              <span class="tag">Prompt packet</span>
+              <span class="tag">Artist note</span>
+            </div>
+            <p class="caption">Not an AI product dashboard. The interface treats automation as one layer inside a broader authored research and image-making practice.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="living-system">
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Living system</p>
+            <h2>The site should feel like a lab that keeps updating.</h2>
+          </div>
+          <p class="lead">Instead of showing fake growth numbers, Feral shows the actual research objects moving through the system: disaster events, habitat features, prompt runs, browser research tasks, visual notes, and authored image studies.</p>
+        </div>
+        <div class="grid auto-grid">
+          <article class="module stack">
+            <span class="status good">Collecting</span>
+            <h3>Disaster seeds</h3>
+            <p class="caption">External source events are gathered server-side and stored as structured records before any interface renders them.</p>
+          </article>
+          <article class="module stack">
+            <span class="status neutral">Mapping</span>
+            <h3>Habitat context</h3>
+            <p class="caption">Nearby farms, shelters, water, roads, woodland, and infrastructure become plausible ecological context.</p>
+          </article>
+          <article class="module stack">
+            <span class="status warn">Interpreting</span>
+            <h3>Visual packets</h3>
+            <p class="caption">Machine-generated prompts sit beside field notes, thumbnails, paintings, and editorial judgment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="system">
+      <div class="container split">
+        <div class="stack">
+          <p class="eyebrow">How it works</p>
+          <h2>A backend engine feeds a living research interface.</h2>
+          <p class="lead">Disaster data enters server-side, habitat context is mapped, prompt packets are stored in SQLite, and the frontend reads everything through a local API.</p>
+        </div>
+        <div class="layer-list">
+          <div class="layer">
+            <span class="tag">Data ingestion</span>
+            <p>USGS earthquake feeds and GDACS RSS arrive through n8n workflows and are dispatched to the sidecar.</p>
+          </div>
+          <div class="layer">
+            <span class="tag">Habitat mapping</span>
+            <p>Overpass API queries farms, water, shelters, and infrastructure near the disaster epicentre.</p>
+          </div>
+          <div class="layer">
+            <span class="tag">Visual synthesis pipeline</span>
+            <p>Sidecar builds scenario JSON, generates prompts, and stores runs in SQLite for the frontend.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="authorship">
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Authorship</p>
+            <h2>Make the artist visible inside the system.</h2>
+          </div>
+          <p class="lead">The interface should show that Feral is research-led visual practice. Generated material is framed as source material and interpretation, not as the whole work.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="module stack">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Sketch study of hoof prints">
+                <path class="study-stroke" d="M30 70 Q32 64 38 62 L42 64 Q44 60 46 64 L44 70 Q42 76 38 76 Z"/>
+                <path class="study-stroke" d="M65 80 Q67 74 73 72 L77 74 Q79 70 81 74 L79 80 Q77 86 73 86 Z"/>
+                <path class="study-stroke" d="M105 68 Q107 62 113 60 L117 62 Q119 58 121 62 L119 68 Q117 74 113 74 Z"/>
+                <line class="study-accent" x1="55" y1="40" x2="55" y2="60"/>
+                <line class="study-accent" x1="125" y1="38" x2="125" y2="58"/>
+                <path class="study-surface" d="M0 90 Q50 87 100 89 Q150 91 200 88 L200 120 Q150 125 100 118 Q50 112 0 120 Z"/>
+                <text x="10" y="145" font-family="ui-monospace, monospace" font-size="8" fill="currentColor" opacity="0.3">sketch·02 — track evidence</text>
+              </svg>
+            </div>
+            <h3>Sketchbook layer</h3>
+            <p class="caption">Small visual studies, composition notes, and anatomy fragments sit beside the data that triggered them.</p>
+          </article>
+          <article class="module stack">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Livestock near damaged fence line">
+                <path class="study-stroke" d="M40 75 L48 75 L52 62 Q56 45 62 42 L66 46 Q68 52 64 60 L62 75 L70 75 L70 82 L40 82 Z"/>
+                <path class="study-stroke" d="M100 78 L108 78 L112 64 Q116 48 122 45 L126 49 Q128 54 124 62 L122 78 L130 78 L130 86 L100 86 Z"/>
+                <line class="study-surface" x1="0" y1="80" x2="35" y2="80"/>
+                <line class="study-surface" x1="135" y1="80" x2="200" y2="80"/>
+                <line class="study-stroke" x1="35" y1="80" x2="40" y2="65"/>
+                <line class="study-stroke" x1="38" y1="76" x2="75" y2="76"/>
+                <text x="10" y="145" font-family="ui-monospace, monospace" font-size="8" fill="currentColor" opacity="0.3">plate·03 — fence line</text>
+              </svg>
+            </div>
+            <h3>Painting layer</h3>
+            <p class="caption">Selected generated studies become references for hand-authored paintings and eventual Feral Bestiary plates.</p>
+          </article>
+          <article class="module stack">
+            <div class="study-visual">
+              <svg viewBox="0 0 200 150" aria-label="Habitat map with topographic lines">
+                <path class="study-stroke" d="M0 20 Q50 30 100 22 Q150 14 200 25"/>
+                <path class="study-stroke" d="M0 48 Q45 55 90 48 Q130 40 170 52 Q190 56 200 50"/>
+                <path class="study-surface" d="M0 72 Q50 65 100 70 Q150 76 200 68 L200 95 Q150 100 100 94 Q50 88 0 96 Z"/>
+                <circle class="study-fill" cx="70" cy="38" r="3"/>
+                <circle class="study-fill" cx="130" cy="42" r="2.5"/>
+                <line class="study-accent" x1="70" y1="35" x2="130" y2="39"/>
+                <text x="10" y="145" font-family="ui-monospace, monospace" font-size="8" fill="currentColor" opacity="0.3">map·04 — habitat context</text>
+              </svg>
+            </div>
+            <h3>Research layer</h3>
+            <p class="caption">Source, place, habitat, uncertainty, and interpretation are kept visible so the work does not read as AI-only output.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="recent-log">
+      <div class="container stack stack-lg">
+        <div class="two-col">
+          <div class="stack">
+            <p class="eyebrow">Recent research objects</p>
+            <h2>Dated entries make the system feel alive.</h2>
+          </div>
+          <a class="btn btn-secondary" href="research-log.html">Open research log</a>
+        </div>
+        <div class="log-list" id="recent-log-list">
+          <div class="skeleton skeleton-row" style="margin-bottom: 12px;"></div>
+          <div class="skeleton skeleton-row short" style="margin-bottom: 12px;"></div>
+          <div class="skeleton skeleton-row med"></div>
+        </div>
+        <p class="meta" id="log-source-note" style="margin-top: var(--space-4);">Loading from sidecar…</p>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="cta">
+      <div class="container split">
+        <div class="stack">
+          <p class="eyebrow">Stay connected</p>
+          <h2>Research outputs, field notes, and visual studies.</h2>
+          <p class="lead">Feral is a standalone research system with its own backend, structured data pipeline, and API-fed frontends. New observations, habitat maps, and generated studies arrive as the pipeline runs.</p>
+        </div>
+        <form class="module stack" data-form="signal">
+          <h3>Request field notes</h3>
+          <p class="caption">Prototype interaction for a future mailing list or hiring conversation. It keeps the CTA editorial rather than SaaS-like.</p>
+          <div class="form-row">
+            <input class="input" type="email" placeholder="name@example.com" aria-label="Email address" />
+            <button class="btn btn-primary" type="submit">Send request</button>
+          </div>
+          <p class="smallprint" data-form-status>Use for contact, studio visits, or employer follow-up.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container foot-inner">
+      <span>Feral Research · 2026</span>
+      <span class="meta">Research system → live data → API-backed engine</span>
+    </div>
+    <div class="container" style="margin-top: var(--space-3);">
+      <span class="meta" style="font-size: var(--text-xs);">Author: Kazuki Yunome</span>
+    </div>
+  </footer>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-panel">
+      <div class="menu-bar">
+        <div class="menu-toggles">
+          <button class="menu-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle dark / light theme"><svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="menu-toggle-btn" id="lang-toggle" type="button" aria-label="Toggle language">EN</button>
+        </div>
+        <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="menu-nav" aria-label="Site navigation">
+        <a aria-current="page" href="landing.html">Home</a>
+        <a href="dashboard.html">Data dashboard</a>
+        <a href="research-log.html">Research log</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="feral.js"></script>
+  <script src="feral-api.js"></script>
+  <script>
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function formatDate(iso) {
+      try { return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }); }
+      catch { return iso || '—'; }
+    }
+
+    function truncate(str, len) {
+      if (!str) return '';
+      return str.length > len ? str.substring(0, len) + '…' : str;
+    }
+
+    async function loadRecent() {
+      const container = document.getElementById('recent-log-list');
+      const note = document.getElementById('log-source-note');
+      let runs = await FeralAPI.searchRuns('feral disaster habitat');
+      if (!runs || runs.length === 0) runs = FeralAPI.getMockRuns();
+      const recent = runs.slice(0, 4);
+
+      container.innerHTML = recent.map((run) => {
+        const title = (run.positive_prompt || '').match(/feral survival after (.+?),/) || [];
+        const label = title[1] ? `Disaster scenario: ${title[1].trim()}` : run.run_id;
+        return `<article class="log-row">
+          <span class="meta">${formatDate(run.created_at)}</span>
+          <div>
+            <h3>${escapeHTML(label)}</h3>
+            <p>${escapeHTML(truncate(run.positive_prompt, 120))}</p>
+          </div>
+          <span class="meta">${run._mock ? 'Demo' : 'Live'}</span>
+        </article>`;
+      }).join('');
+
+      if (note) note.textContent = `${recent.length} recent run${recent.length !== 1 ? 's' : ''} · ${runs.length > 0 && !runs[0]._mock ? 'from sidecar API' : 'demo entries'}`;
+    }
+
+    function updateBadge(connected) {
+      const badge = document.getElementById('conn-badge');
+      if (!badge) return;
+      badge.textContent = connected ? 'system connected' : 'system offline';
+      badge.setAttribute('data-state', connected ? 'connected' : 'disconnected');
+    }
+
+    FeralAPI.onConnectionChange(updateBadge);
+    FeralAPI.startPolling();
+    FeralAPI.checkHealth().then(updateBadge);
+    loadRecent();
+  </script>
+</body>
+</html>

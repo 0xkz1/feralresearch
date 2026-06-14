@@ -1,0 +1,1711 @@
+{
+  "schema": "antigravity-knowledge-graph-v2",
+  "created_at_utc": "2026-06-14T13:51:05.373656+00:00",
+  "workspace": "/media/kz003/atelier/feral",
+  "summary": {
+    "file_count": 51,
+    "walked_file_count": 51,
+    "languages": {
+      "Markdown": 13,
+      "TypeScript": 8,
+      "JSON": 8,
+      "HTML": 5,
+      "JavaScript": 2,
+      "CSS": 1,
+      "YAML": 1,
+      "Python": 1,
+      "SQL": 1
+    },
+    "frameworks": [],
+    "type_distribution": {
+      "code": 40,
+      "other": 8,
+      "data": 1,
+      "documentation": 2
+    },
+    "semantic_files": 11,
+    "semantic_edges": 70,
+    "semantic_files_by_language": {
+      "JavaScript": 2,
+      "Python": 1,
+      "TypeScript": 8
+    },
+    "semantic_edges_by_type": {
+      "declares_package": 11,
+      "defines": 24,
+      "entrypoint": 1,
+      "imports": 34
+    },
+    "semantic_adapters": {
+      "python": 1,
+      "typescript": 10
+    },
+    "generic_fallback_file_count": 0,
+    "parse_error_file_count": 0
+  },
+  "diagnostics": {
+    "generic_fallback_files": [],
+    "parse_error_files": []
+  },
+  "nodes": [
+    {
+      "id": "workspace:/media/kz003/atelier/feral",
+      "type": "workspace",
+      "label": "feral"
+    },
+    {
+      "id": "language:markdown",
+      "type": "language",
+      "label": "Markdown",
+      "count": 13
+    },
+    {
+      "id": "language:typescript",
+      "type": "language",
+      "label": "TypeScript",
+      "count": 8
+    },
+    {
+      "id": "language:json",
+      "type": "language",
+      "label": "JSON",
+      "count": 8
+    },
+    {
+      "id": "language:html",
+      "type": "language",
+      "label": "HTML",
+      "count": 5
+    },
+    {
+      "id": "language:javascript",
+      "type": "language",
+      "label": "JavaScript",
+      "count": 2
+    },
+    {
+      "id": "language:css",
+      "type": "language",
+      "label": "CSS",
+      "count": 1
+    },
+    {
+      "id": "language:yaml",
+      "type": "language",
+      "label": "YAML",
+      "count": 1
+    },
+    {
+      "id": "language:python",
+      "type": "language",
+      "label": "Python",
+      "count": 1
+    },
+    {
+      "id": "language:sql",
+      "type": "language",
+      "label": "SQL",
+      "count": 1
+    },
+    {
+      "id": "dir:cms",
+      "type": "directory",
+      "label": "cms"
+    },
+    {
+      "id": "dir:engine",
+      "type": "directory",
+      "label": "engine"
+    },
+    {
+      "id": "dir:outputs",
+      "type": "directory",
+      "label": "outputs"
+    },
+    {
+      "id": "dir:vault",
+      "type": "directory",
+      "label": "vault"
+    },
+    {
+      "id": "dir:web",
+      "type": "directory",
+      "label": "web"
+    },
+    {
+      "id": "file:README.md",
+      "type": "code",
+      "label": "README.md",
+      "size": 793,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:.env",
+      "type": "other",
+      "label": ".env",
+      "size": 181,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:web/landing.html",
+      "type": "code",
+      "label": "web/landing.html",
+      "size": 16427,
+      "mime": "text/html"
+    },
+    {
+      "id": "file:web/gallery.html",
+      "type": "code",
+      "label": "web/gallery.html",
+      "size": 17948,
+      "mime": "text/html"
+    },
+    {
+      "id": "file:web/PROGRESS.md",
+      "type": "code",
+      "label": "web/PROGRESS.md",
+      "size": 1327,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:web/feral-api.js",
+      "type": "code",
+      "label": "web/feral-api.js",
+      "size": 9922,
+      "mime": "text/javascript",
+      "language": "JavaScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "web/feral-api",
+      "semantic_module_name": "web/feral-api",
+      "semantic_import_count": 0,
+      "semantic_symbol_count": 0,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:web/dashboard.html",
+      "type": "code",
+      "label": "web/dashboard.html",
+      "size": 16044,
+      "mime": "text/html"
+    },
+    {
+      "id": "file:web/README.md",
+      "type": "code",
+      "label": "web/README.md",
+      "size": 897,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:web/index.html",
+      "type": "code",
+      "label": "web/index.html",
+      "size": 6989,
+      "mime": "text/html"
+    },
+    {
+      "id": "file:web/feral-system.css",
+      "type": "code",
+      "label": "web/feral-system.css",
+      "size": 42552,
+      "mime": "text/css"
+    },
+    {
+      "id": "file:web/research-log.html",
+      "type": "code",
+      "label": "web/research-log.html",
+      "size": 11915,
+      "mime": "text/html"
+    },
+    {
+      "id": "file:web/feral.js",
+      "type": "code",
+      "label": "web/feral.js",
+      "size": 4931,
+      "mime": "text/javascript",
+      "language": "JavaScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "web/feral",
+      "semantic_module_name": "web/feral",
+      "semantic_import_count": 0,
+      "semantic_symbol_count": 0,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/sanity.config.ts",
+      "type": "code",
+      "label": "cms/sanity.config.ts",
+      "size": 1410,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/sanity.config",
+      "semantic_module_name": "cms/sanity.config",
+      "semantic_import_count": 6,
+      "semantic_symbol_count": 0,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/pnpm-lock.yaml",
+      "type": "code",
+      "label": "cms/pnpm-lock.yaml",
+      "size": 398600,
+      "mime": "application/yaml"
+    },
+    {
+      "id": "file:cms/sanity.cli.ts",
+      "type": "code",
+      "label": "cms/sanity.cli.ts",
+      "size": 190,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/sanity.cli",
+      "semantic_module_name": "cms/sanity.cli",
+      "semantic_import_count": 1,
+      "semantic_symbol_count": 0,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/PROGRESS.md",
+      "type": "code",
+      "label": "cms/PROGRESS.md",
+      "size": 645,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:cms/.gitignore",
+      "type": "other",
+      "label": "cms/.gitignore",
+      "size": 425,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:cms/tsconfig.tsbuildinfo",
+      "type": "other",
+      "label": "cms/tsconfig.tsbuildinfo",
+      "size": 129671,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:cms/eslint.config.mjs",
+      "type": "other",
+      "label": "cms/eslint.config.mjs",
+      "size": 78,
+      "mime": "text/javascript"
+    },
+    {
+      "id": "file:cms/README.md",
+      "type": "code",
+      "label": "cms/README.md",
+      "size": 778,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:cms/tsconfig.json",
+      "type": "code",
+      "label": "cms/tsconfig.json",
+      "size": 417,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:cms/package.json",
+      "type": "code",
+      "label": "cms/package.json",
+      "size": 887,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:cms/schemaTypes/index.ts",
+      "type": "code",
+      "label": "cms/schemaTypes/index.ts",
+      "size": 343,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/schemaTypes/index",
+      "semantic_module_name": "cms/schemaTypes/index",
+      "semantic_import_count": 5,
+      "semantic_symbol_count": 1,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/schemaTypes/feralGallery.ts",
+      "type": "code",
+      "label": "cms/schemaTypes/feralGallery.ts",
+      "size": 2371,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/schemaTypes/feralGallery",
+      "semantic_module_name": "cms/schemaTypes/feralGallery",
+      "semantic_import_count": 2,
+      "semantic_symbol_count": 1,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/schemaTypes/feralSiteSettings.ts",
+      "type": "code",
+      "label": "cms/schemaTypes/feralSiteSettings.ts",
+      "size": 3588,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/schemaTypes/feralSiteSettings",
+      "semantic_module_name": "cms/schemaTypes/feralSiteSettings",
+      "semantic_import_count": 1,
+      "semantic_symbol_count": 1,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/schemaTypes/feralDashboard.ts",
+      "type": "code",
+      "label": "cms/schemaTypes/feralDashboard.ts",
+      "size": 2037,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/schemaTypes/feralDashboard",
+      "semantic_module_name": "cms/schemaTypes/feralDashboard",
+      "semantic_import_count": 1,
+      "semantic_symbol_count": 1,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/schemaTypes/feralLanding.ts",
+      "type": "code",
+      "label": "cms/schemaTypes/feralLanding.ts",
+      "size": 1469,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/schemaTypes/feralLanding",
+      "semantic_module_name": "cms/schemaTypes/feralLanding",
+      "semantic_import_count": 1,
+      "semantic_symbol_count": 1,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:cms/schemaTypes/feralResearch.ts",
+      "type": "code",
+      "label": "cms/schemaTypes/feralResearch.ts",
+      "size": 3177,
+      "mime": "text/vnd.trolltech.linguist",
+      "language": "TypeScript",
+      "semantic_adapter": "typescript",
+      "semantic_package_identity": "cms/schemaTypes/feralResearch",
+      "semantic_module_name": "cms/schemaTypes/feralResearch",
+      "semantic_import_count": 2,
+      "semantic_symbol_count": 1,
+      "is_test_file": false,
+      "entrypoints": [],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:engine/PROGRESS.md",
+      "type": "code",
+      "label": "engine/PROGRESS.md",
+      "size": 1467,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:engine/hermes.json",
+      "type": "code",
+      "label": "engine/hermes.json",
+      "size": 130,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:engine/README.md",
+      "type": "code",
+      "label": "engine/README.md",
+      "size": 1461,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:engine/agents/feral_sidecar.py",
+      "type": "code",
+      "label": "engine/agents/feral_sidecar.py",
+      "size": 22834,
+      "mime": "text/x-python",
+      "language": "Python",
+      "semantic_adapter": "python",
+      "semantic_package_identity": "engine.agents.feral_sidecar",
+      "semantic_module_name": "engine.agents.feral_sidecar",
+      "semantic_import_count": 15,
+      "semantic_symbol_count": 18,
+      "is_test_file": false,
+      "entrypoints": [
+        "main"
+      ],
+      "generic_fallback": false
+    },
+    {
+      "id": "file:engine/notes/research/initial-workflow.md",
+      "type": "code",
+      "label": "engine/notes/research/initial-workflow.md",
+      "size": 835,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:engine/workflows/n8n/feral-disaster-habitat-browser-sidecar.json",
+      "type": "code",
+      "label": "engine/workflows/n8n/feral-disaster-habitat-browser-sidecar.json",
+      "size": 4775,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:engine/workflows/n8n/feral-end-to-end-scaffold.json",
+      "type": "code",
+      "label": "engine/workflows/n8n/feral-end-to-end-scaffold.json",
+      "size": 7836,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:engine/workflows/n8n/README.md",
+      "type": "code",
+      "label": "engine/workflows/n8n/README.md",
+      "size": 993,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:engine/configs/sources.json",
+      "type": "code",
+      "label": "engine/configs/sources.json",
+      "size": 1129,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:engine/database/feral.sqlite",
+      "type": "data",
+      "label": "engine/database/feral.sqlite",
+      "size": 61440,
+      "mime": "application/vnd.sqlite3"
+    },
+    {
+      "id": "file:engine/database/schema.sql",
+      "type": "code",
+      "label": "engine/database/schema.sql",
+      "size": 1093,
+      "mime": "application/sql"
+    },
+    {
+      "id": "file:engine/outputs/hermes-gateway.log",
+      "type": "other",
+      "label": "engine/outputs/hermes-gateway.log",
+      "size": 4259,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:engine/outputs/hermes-dashboard.log",
+      "type": "other",
+      "label": "engine/outputs/hermes-dashboard.log",
+      "size": 0,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:engine/outputs/sidecar.log",
+      "type": "other",
+      "label": "engine/outputs/sidecar.log",
+      "size": 115,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:engine/outputs/hermes-mcp.log",
+      "type": "other",
+      "label": "engine/outputs/hermes-mcp.log",
+      "size": 0,
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "file:engine/outputs/runs/run_9f4f746217834f87/opencode-prompt-review.md",
+      "type": "code",
+      "label": "engine/outputs/runs/run_9f4f746217834f87/opencode-prompt-review.md",
+      "size": 2764,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:engine/outputs/runs/run_9f4f746217834f87/prompt-packet.json",
+      "type": "code",
+      "label": "engine/outputs/runs/run_9f4f746217834f87/prompt-packet.json",
+      "size": 20366,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:engine/outputs/runs/run_9f4f746217834f87/browser-use-task.txt",
+      "type": "documentation",
+      "label": "engine/outputs/runs/run_9f4f746217834f87/browser-use-task.txt",
+      "size": 938,
+      "mime": "text/plain"
+    },
+    {
+      "id": "file:engine/outputs/runs/run_46d048fea2ac0c54/opencode-prompt-review.md",
+      "type": "code",
+      "label": "engine/outputs/runs/run_46d048fea2ac0c54/opencode-prompt-review.md",
+      "size": 2410,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:engine/outputs/runs/run_46d048fea2ac0c54/prompt-packet.json",
+      "type": "code",
+      "label": "engine/outputs/runs/run_46d048fea2ac0c54/prompt-packet.json",
+      "size": 12948,
+      "mime": "application/json"
+    },
+    {
+      "id": "file:engine/outputs/runs/run_46d048fea2ac0c54/browser-use-task.txt",
+      "type": "documentation",
+      "label": "engine/outputs/runs/run_46d048fea2ac0c54/browser-use-task.txt",
+      "size": 747,
+      "mime": "text/plain"
+    },
+    {
+      "id": "file:vault/PROGRESS.md",
+      "type": "code",
+      "label": "vault/PROGRESS.md",
+      "size": 274,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "file:vault/README.md",
+      "type": "code",
+      "label": "vault/README.md",
+      "size": 617,
+      "mime": "text/markdown"
+    },
+    {
+      "id": "module:cms/sanity.cli",
+      "type": "module",
+      "label": "cms/sanity.cli",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:sanity/cli",
+      "type": "module",
+      "label": "sanity/cli",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:cms/sanity.config",
+      "type": "module",
+      "label": "cms/sanity.config",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:sanity",
+      "type": "module",
+      "label": "sanity",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:sanity/structure",
+      "type": "module",
+      "label": "sanity/structure",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:@sanity/vision",
+      "type": "module",
+      "label": "@sanity/vision",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:@sanity/orderable-document-list",
+      "type": "module",
+      "label": "@sanity/orderable-document-list",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:cms/schemaTypes",
+      "type": "module",
+      "label": "cms/schemaTypes",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:@sanity/icons",
+      "type": "module",
+      "label": "@sanity/icons",
+      "language": "TypeScript"
+    },
+    {
+      "id": "module:cms/schemaTypes/feralDashboard",
+      "type": "module",
+      "label": "cms/schemaTypes/feralDashboard",
+      "language": "TypeScript"
+    },
+    {
+      "id": "symbol:cms/schemaTypes/feralDashboard.ts:feralDashboard",
+      "type": "constant",
+      "label": "feralDashboard",
+      "lineno": 3,
+      "signature": "export const feralDashboard = defineType({\n  name: 'feralDashboard',\n  title: 'Dashboard Config',\n  type: 'document',\n  fields: [\n    defineField({\n      name: 'title',\n      title: 'Internal Name',\n      type: 'string',\n      validation: (rule: any) => rule.required(),\n    }),\n    defineField({",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "module:cms/schemaTypes/feralGallery",
+      "type": "module",
+      "label": "cms/schemaTypes/feralGallery",
+      "language": "TypeScript"
+    },
+    {
+      "id": "symbol:cms/schemaTypes/feralGallery.ts:feralGallery",
+      "type": "constant",
+      "label": "feralGallery",
+      "lineno": 4,
+      "signature": "export const feralGallery = defineType({\n  name: 'feralGallery',\n  title: 'Gallery Item',\n  type: 'document',\n  fields: [\n    defineField({\n      name: 'title',\n      title: 'Title',\n      type: 'object',\n      fields: [\n        defineField({ name: 'en', title: 'English', type: 'string', validation: (rule: any) => rule.required() }),\n        defineField({ name: 'ja', title: '日本語', type: 'string' }),",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "module:cms/schemaTypes/feralLanding",
+      "type": "module",
+      "label": "cms/schemaTypes/feralLanding",
+      "language": "TypeScript"
+    },
+    {
+      "id": "symbol:cms/schemaTypes/feralLanding.ts:feralLanding",
+      "type": "constant",
+      "label": "feralLanding",
+      "lineno": 3,
+      "signature": "export const feralLanding = defineType({\n  name: 'feralLanding',\n  title: 'Landing Section',\n  type: 'document',\n  fields: [\n    defineField({\n      name: 'title',\n      title: 'Internal Name',\n      type: 'string',\n      validation: (rule: any) => rule.required(),\n    }),\n    defineField({",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "module:cms/schemaTypes/feralResearch",
+      "type": "module",
+      "label": "cms/schemaTypes/feralResearch",
+      "language": "TypeScript"
+    },
+    {
+      "id": "symbol:cms/schemaTypes/feralResearch.ts:feralResearch",
+      "type": "constant",
+      "label": "feralResearch",
+      "lineno": 4,
+      "signature": "export const feralResearch = defineType({\n  name: 'feralResearch',\n  title: 'Research Entry',\n  type: 'document',\n  fields: [\n    defineField({\n      name: 'title',\n      title: 'Title',\n      type: 'object',\n      fields: [\n        defineField({ name: 'en', title: 'English', type: 'string', validation: (rule: any) => rule.required() }),\n        defineField({ name: 'ja', title: '日本語', type: 'string' }),",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "module:cms/schemaTypes/feralSiteSettings",
+      "type": "module",
+      "label": "cms/schemaTypes/feralSiteSettings",
+      "language": "TypeScript"
+    },
+    {
+      "id": "symbol:cms/schemaTypes/feralSiteSettings.ts:feralSiteSettings",
+      "type": "constant",
+      "label": "feralSiteSettings",
+      "lineno": 3,
+      "signature": "export const feralSiteSettings = defineType({\n  name: 'feralSiteSettings',\n  title: 'Site Settings',\n  type: 'document',\n  fields: [\n    defineField({\n      name: 'siteName',\n      title: 'Site Name',\n      type: 'object',\n      fields: [\n        defineField({ name: 'en', title: 'English', type: 'string' }),\n        defineField({ name: 'ja', title: '日本語', type: 'string' }),",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "module:cms/schemaTypes/index",
+      "type": "module",
+      "label": "cms/schemaTypes/index",
+      "language": "TypeScript"
+    },
+    {
+      "id": "symbol:cms/schemaTypes/index.ts:schemaTypes",
+      "type": "constant",
+      "label": "schemaTypes",
+      "lineno": 7,
+      "signature": "export const schemaTypes = [feralLanding, feralResearch, feralGallery, feralDashboard, feralSiteSettings]",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "module:engine.agents.feral_sidecar",
+      "type": "module",
+      "label": "engine.agents.feral_sidecar",
+      "language": "Python"
+    },
+    {
+      "id": "module:__future__",
+      "type": "module",
+      "label": "__future__",
+      "language": "Python"
+    },
+    {
+      "id": "module:hashlib",
+      "type": "module",
+      "label": "hashlib",
+      "language": "Python"
+    },
+    {
+      "id": "module:json",
+      "type": "module",
+      "label": "json",
+      "language": "Python"
+    },
+    {
+      "id": "module:os",
+      "type": "module",
+      "label": "os",
+      "language": "Python"
+    },
+    {
+      "id": "module:random",
+      "type": "module",
+      "label": "random",
+      "language": "Python"
+    },
+    {
+      "id": "module:sqlite3",
+      "type": "module",
+      "label": "sqlite3",
+      "language": "Python"
+    },
+    {
+      "id": "module:sys",
+      "type": "module",
+      "label": "sys",
+      "language": "Python"
+    },
+    {
+      "id": "module:textwrap",
+      "type": "module",
+      "label": "textwrap",
+      "language": "Python"
+    },
+    {
+      "id": "module:time",
+      "type": "module",
+      "label": "time",
+      "language": "Python"
+    },
+    {
+      "id": "module:urllib.parse",
+      "type": "module",
+      "label": "urllib.parse",
+      "language": "Python"
+    },
+    {
+      "id": "module:urllib.request",
+      "type": "module",
+      "label": "urllib.request",
+      "language": "Python"
+    },
+    {
+      "id": "module:datetime",
+      "type": "module",
+      "label": "datetime",
+      "language": "Python"
+    },
+    {
+      "id": "module:http.server",
+      "type": "module",
+      "label": "http.server",
+      "language": "Python"
+    },
+    {
+      "id": "module:pathlib",
+      "type": "module",
+      "label": "pathlib",
+      "language": "Python"
+    },
+    {
+      "id": "module:typing",
+      "type": "module",
+      "label": "typing",
+      "language": "Python"
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:utc_now",
+      "type": "function",
+      "label": "utc_now",
+      "lineno": 34,
+      "signature": "def utc_now() -> str:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:load_config",
+      "type": "function",
+      "label": "load_config",
+      "lineno": 38,
+      "signature": "def load_config() -> dict[str, Any]:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:stable_id",
+      "type": "function",
+      "label": "stable_id",
+      "lineno": 42,
+      "signature": "def stable_id(prefix: str, payload: Any) -> str:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:init_db",
+      "type": "function",
+      "label": "init_db",
+      "lineno": 47,
+      "signature": "def init_db() -> None:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:overpass_query",
+      "type": "function",
+      "label": "overpass_query",
+      "lineno": 54,
+      "signature": "def overpass_query(lat: float, lon: float, radius: int) -> str:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:fetch_overpass",
+      "type": "function",
+      "label": "fetch_overpass",
+      "lineno": 75,
+      "signature": "def fetch_overpass(lat: float, lon: float, config: dict[str, Any]) -> dict[str, Any]:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:feature_position",
+      "type": "function",
+      "label": "feature_position",
+      "lineno": 93,
+      "signature": "def feature_position(element: dict[str, Any]) -> tuple[float | None, float | None]:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:feature_label",
+      "type": "function",
+      "label": "feature_label",
+      "lineno": 100,
+      "signature": "def feature_label(tags: dict[str, Any]) -> str:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:summarize_features",
+      "type": "function",
+      "label": "summarize_features",
+      "lineno": 109,
+      "signature": "def summarize_features(elements: list[dict[str, Any]]) -> list[dict[str, Any]]:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:build_scenario",
+      "type": "function",
+      "label": "build_scenario",
+      "lineno": 128,
+      "signature": "def build_scenario(",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:build_prompts",
+      "type": "function",
+      "label": "build_prompts",
+      "lineno": 162,
+      "signature": "def build_prompts(",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:build_log_narrative",
+      "type": "function",
+      "label": "build_log_narrative",
+      "lineno": 183,
+      "signature": "def build_log_narrative(",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:browser_task",
+      "type": "function",
+      "label": "browser_task",
+      "lineno": 229,
+      "signature": "def browser_task(disaster: dict[str, Any], features: list[dict[str, Any]]) -> str:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:opencode_task",
+      "type": "function",
+      "label": "opencode_task",
+      "lineno": 253,
+      "signature": "def opencode_task(",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:store_run",
+      "type": "function",
+      "label": "store_run",
+      "lineno": 305,
+      "signature": "def store_run(",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:process_payload",
+      "type": "function",
+      "label": "process_payload",
+      "lineno": 389,
+      "signature": "def process_payload(payload: dict[str, Any]) -> dict[str, Any]:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:Handler",
+      "type": "class",
+      "label": "Handler",
+      "lineno": 467,
+      "signature": "class Handler(BaseHTTPRequestHandler):",
+      "receiver": null,
+      "bases": [
+        "BaseHTTPRequestHandler"
+      ],
+      "entrypoint": false
+    },
+    {
+      "id": "symbol:engine/agents/feral_sidecar.py:main",
+      "type": "function",
+      "label": "main",
+      "lineno": 592,
+      "signature": "def main() -> int:",
+      "receiver": null,
+      "bases": [],
+      "entrypoint": true
+    },
+    {
+      "id": "module:web/feral-api",
+      "type": "module",
+      "label": "web/feral-api",
+      "language": "JavaScript"
+    },
+    {
+      "id": "module:web/feral",
+      "type": "module",
+      "label": "web/feral",
+      "language": "JavaScript"
+    }
+  ],
+  "edges": [
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:markdown",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:typescript",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:json",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:html",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:javascript",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:css",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:yaml",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:python",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "language:sql",
+      "type": "uses_language"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "dir:cms",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "dir:engine",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "dir:outputs",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "dir:vault",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "dir:web",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:README.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:.env",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/landing.html",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/gallery.html",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/PROGRESS.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/feral-api.js",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/dashboard.html",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/README.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/index.html",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/feral-system.css",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/research-log.html",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:web/feral.js",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/sanity.config.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/pnpm-lock.yaml",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/sanity.cli.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/PROGRESS.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/.gitignore",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/tsconfig.tsbuildinfo",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/eslint.config.mjs",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/README.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/tsconfig.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/package.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/schemaTypes/index.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/schemaTypes/feralGallery.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/schemaTypes/feralSiteSettings.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/schemaTypes/feralDashboard.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/schemaTypes/feralLanding.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:cms/schemaTypes/feralResearch.ts",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/PROGRESS.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/hermes.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/README.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/agents/feral_sidecar.py",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/notes/research/initial-workflow.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/workflows/n8n/feral-disaster-habitat-browser-sidecar.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/workflows/n8n/feral-end-to-end-scaffold.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/workflows/n8n/README.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/configs/sources.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/database/feral.sqlite",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/database/schema.sql",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/hermes-gateway.log",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/hermes-dashboard.log",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/sidecar.log",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/hermes-mcp.log",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/runs/run_9f4f746217834f87/opencode-prompt-review.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/runs/run_9f4f746217834f87/prompt-packet.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/runs/run_9f4f746217834f87/browser-use-task.txt",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/runs/run_46d048fea2ac0c54/opencode-prompt-review.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/runs/run_46d048fea2ac0c54/prompt-packet.json",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:engine/outputs/runs/run_46d048fea2ac0c54/browser-use-task.txt",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:vault/PROGRESS.md",
+      "type": "contains"
+    },
+    {
+      "from": "workspace:/media/kz003/atelier/feral",
+      "to": "file:vault/README.md",
+      "type": "contains"
+    },
+    {
+      "from": "file:cms/sanity.cli.ts",
+      "to": "module:cms/sanity.cli",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/sanity.cli.ts",
+      "to": "module:sanity/cli",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:cms/sanity.config",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:sanity",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:sanity/structure",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:@sanity/vision",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:@sanity/orderable-document-list",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:cms/schemaTypes",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/sanity.config.ts",
+      "to": "module:@sanity/icons",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralDashboard.ts",
+      "to": "module:cms/schemaTypes/feralDashboard",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralDashboard.ts",
+      "to": "module:sanity",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralDashboard.ts",
+      "to": "symbol:cms/schemaTypes/feralDashboard.ts:feralDashboard",
+      "type": "defines"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralGallery.ts",
+      "to": "module:cms/schemaTypes/feralGallery",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralGallery.ts",
+      "to": "module:sanity",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralGallery.ts",
+      "to": "module:@sanity/orderable-document-list",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralGallery.ts",
+      "to": "symbol:cms/schemaTypes/feralGallery.ts:feralGallery",
+      "type": "defines"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralLanding.ts",
+      "to": "module:cms/schemaTypes/feralLanding",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralLanding.ts",
+      "to": "module:sanity",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralLanding.ts",
+      "to": "symbol:cms/schemaTypes/feralLanding.ts:feralLanding",
+      "type": "defines"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralResearch.ts",
+      "to": "module:cms/schemaTypes/feralResearch",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralResearch.ts",
+      "to": "module:sanity",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralResearch.ts",
+      "to": "module:@sanity/orderable-document-list",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralResearch.ts",
+      "to": "symbol:cms/schemaTypes/feralResearch.ts:feralResearch",
+      "type": "defines"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralSiteSettings.ts",
+      "to": "module:cms/schemaTypes/feralSiteSettings",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralSiteSettings.ts",
+      "to": "module:sanity",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/feralSiteSettings.ts",
+      "to": "symbol:cms/schemaTypes/feralSiteSettings.ts:feralSiteSettings",
+      "type": "defines"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "module:cms/schemaTypes/index",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "module:cms/schemaTypes/feralLanding",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "module:cms/schemaTypes/feralResearch",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "module:cms/schemaTypes/feralGallery",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "module:cms/schemaTypes/feralDashboard",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "module:cms/schemaTypes/feralSiteSettings",
+      "type": "imports"
+    },
+    {
+      "from": "file:cms/schemaTypes/index.ts",
+      "to": "symbol:cms/schemaTypes/index.ts:schemaTypes",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:engine.agents.feral_sidecar",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:__future__",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:hashlib",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:json",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:os",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:random",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:sqlite3",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:sys",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:textwrap",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:time",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:urllib.parse",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:urllib.request",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:datetime",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:http.server",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:pathlib",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "module:typing",
+      "type": "imports"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:utc_now",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:load_config",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:stable_id",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:init_db",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:overpass_query",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:fetch_overpass",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:feature_position",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:feature_label",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:summarize_features",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:build_scenario",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:build_prompts",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:build_log_narrative",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:browser_task",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:opencode_task",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:store_run",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:process_payload",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:Handler",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:main",
+      "type": "defines"
+    },
+    {
+      "from": "file:engine/agents/feral_sidecar.py",
+      "to": "symbol:engine/agents/feral_sidecar.py:main",
+      "type": "entrypoint"
+    },
+    {
+      "from": "file:web/feral-api.js",
+      "to": "module:web/feral-api",
+      "type": "declares_package"
+    },
+    {
+      "from": "file:web/feral.js",
+      "to": "module:web/feral",
+      "type": "declares_package"
+    }
+  ]
+}
