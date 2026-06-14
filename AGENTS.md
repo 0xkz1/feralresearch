@@ -36,3 +36,14 @@ Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
 2. Use `detect_changes` for code review.
 3. Use `get_affected_flows` to understand impact.
 4. Use `query_graph` pattern="tests_for" to check coverage.
+
+---
+
+## Infrastructure (Development / Private Network)
+
+| Service | URL | Status |
+|---------|-----|--------|
+| n8n | http://100.123.190.33:5678 | Running |
+| Sidecar | http://127.0.0.1:8765 | Running |
+| Hermes Dashboard | http://100.123.190.33:9119 | Running |
+

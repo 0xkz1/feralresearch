@@ -4,20 +4,28 @@ Public observation system focused on feral animals, displaced pets, abandoned li
 
 ## Architecture
 
+```
 feral/
 ├── web/       # Public website (HTML/CSS/JS)
-├── cms/       # Sanity CMS
+├── cms/       # Sanity CMS (Under development)
 ├── engine/    # Scraping, SQLite, sidecar API, RAG, n8n workflows
 └── vault/     # Facts, ideas, canvas, assets (Obsidian-compatible)
+```
 
 ## Pipeline
 
+```
 World → Engine → Database/RAG → Vault → CMS → Public Website → Readers → Next Observation
+```
 
-## Infrastructure
+## Features
 
-| Service | URL | Status |
-|---------|-----|--------|
-| n8n | http://100.123.190.33:5678 | Running |
-| Sidecar | http://127.0.0.1:8765 | Running |
-| Hermes Dashboard | http://100.123.190.33:9119 | Running |
+### Research Log UI (`web/`)
+- **Dual Observation Densities**: Displays short telemetry logs alongside expandable, in-depth editorial readings and generated visual prompts.
+- **Unified Navigation**: Structured across Home, Data Dashboard, Research Log, and Gallery.
+
+### Sidecar Engine & API (`engine/`)
+- **Dynamic Narrative Building**: Enriches raw disaster data with OpenStreetMap local habitat tags to generate descriptive animal-viewpoint prompts.
+- **Structured Database**: Fully tracks disaster occurrences, OSM features, and generated prompts in a unified SQLite repository.
+- **GET `/logs` Endpoint**: Serves the 50 most recent log runs formatted for the frontend Research Log view.
+- **RAG & Search Support**: Includes API endpoints for retrieving log histories and executing semantic searches on prompt runs.
