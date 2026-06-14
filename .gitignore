@@ -24,6 +24,18 @@ outputs/
 # Contains private infra info (IPs) — keep local only
 AGENTS.md
 
+# CRG instruction files (may contain local infra info)
+CLAUDE.md
+GEMINI.md
+QODER.md
+.cursorrules
+.windsurfrules
+.github/code-review-graph.instruction.md
+.kiro/
+
+# CRG skills (auto-generated, not project code)
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
