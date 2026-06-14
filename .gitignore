@@ -21,6 +21,9 @@ outputs/
 # CRG graph database (auto-generated)
 .code-review-graph/
 
+# Contains private infra info (IPs) — keep local only
+AGENTS.md
+
 # OS
 .DS_Store
 Thumbs.db
