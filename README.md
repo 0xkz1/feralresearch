@@ -21,7 +21,7 @@ World → Engine → Database/RAG → Vault → CMS → Public Website → Reade
 ### システムフロー図 (Mermaid)
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[World / 外部情報<br/>Reuters・Web・Reddit・その他]:::world
 
     subgraph U[Ubuntu / feral-engine]
@@ -29,19 +29,24 @@ flowchart LR
         C[(SQL DB)]:::db
         D[RAG Index]:::rag
         E[RAG Retrieval<br/>検索・要約・関連付け]:::rag
-        F[Hermes Agent<br/>観測→判断→タスク分配]:::agent
-        G[Image Generation<br/>画像生成フェーズ]:::image
+        F[Hermes Agent<br/>観測→判断・タスク分配]:::agent
+        G[Image Generation<br/>画像生成]:::image
         H[Artifacts Output<br/>images / logs / packets]:::artifact
+
+        B --> C & D
+        C & D --> E
+        E --> F --> G --> H
     end
 
     subgraph M[Mac / Obsidian + feral/vault]
         I[obsidian-vault<br/>個人メモ・草稿]:::vault
         J[feral/vault<br/>fact / idea / canvas / assets]:::vault
         K[Sanity / feral-cms<br/>公開用の編集・注釈・順序調整]:::cms
+
+        I --> J --> K
     end
 
     subgraph W[Public Web / feral-web]
-        direction TB
         M1[Data dashboard]:::web
         N[Research log]:::web
         P[Article]:::web
@@ -57,38 +62,17 @@ flowchart LR
     T[OpenCode<br/>開発・修正の支援]:::dev
 
     A --> B
-    B --> C
-    B --> D
-    C --> E
-    D --> E
-    E --> F
-    F --> G
-    G --> H
     H --> J
 
-    I --> J
-    J --> K
-
-    K --> M1
-    K --> N
-    K --> P
-    K --> Q
-    K --> O
-
-    M1 --> R
-    N --> R
-    P --> R
-    Q --> R
-    O --> R
+    K --> M1 & N & P & Q & O
+    M1 & N & P & Q & O --> R
     R --> S
     S --> A
 
     R --> J
     R --> B
 
-    T --> K
-    T --> J
-    T --> B
+    T --> K & J & B
 
     classDef world fill:#e5e7eb,stroke:#6b7280,color:#111827,stroke-width:1px;
     classDef engine fill:#dbeafe,stroke:#2563eb,color:#0f172a,stroke-width:1px;
